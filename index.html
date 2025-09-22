@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Приглашение</title>
+  <meta name="description" content="Стильное интерактивное приглашение" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Фоновые слои -->
+  <div class="bg-gradient"></div>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Главная карточка -->
+  <main class="card">
+    <figure class="cover">
+      <img src="cover.jpg" alt="Обложка приглашения" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1600&auto=format&fit=crop';" />
+    </figure>
+    <header class="hero">
+      <div class="badge">Приглашение</div>
+      <h1 class="names">Анна & Никита</h1>
+      <p class="subtitle">Мы будем рады разделить с вами наш особенный день</p>
+
+      <div class="when-where">
+        <div class="when">
+          <span class="label">Дата</span>
+          <span class="value">12 октября 2025</span>
+        </div>
+        <div class="where">
+          <span class="label">Место</span>
+          <span class="value">Гранд Холл, Москва</span>
+        </div>
+      </div>
+
+      <div id="countdown" class="countdown" data-date="2025-10-12T16:00:00+03:00">
+        <div><span id="d">--</span><small>дней</small></div>
+        <div><span id="h">--</span><small>часов</small></div>
+        <div><span id="m">--</span><small>мин</small></div>
+        <div><span id="s">--</span><small>сек</small></div>
+      </div>
+
+      <div class="cta">
+        <button id="rsvpBtn" class="btn primary">RSVP</button>
+        <button id="addToCalendar" class="btn outline">Добавить в календарь</button>
+        <a class="btn text" href="https://maps.google.com/?q=Гранд%20Холл%20Москва" target="_blank" rel="noopener">Открыть карту</a>
+      </div>
+    </header>
+
+    <section class="details">
+      <h2>Программа</h2>
+      <ul class="timeline">
+        <li>
+          <span class="time">16:00</span>
+          <span class="dot"></span>
+          <span class="text">Сбор гостей и welcome-drink</span>
+        </li>
+        <li>
+          <span class="time">17:00</span>
+          <span class="dot"></span>
+          <span class="text">Церемония</span>
+        </li>
+        <li>
+          <span class="time">18:00</span>
+          <span class="dot"></span>
+          <span class="text">Праздничный ужин и танцы</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section wishes">
+      <h2>Тёплые слова</h2>
+      <p class="lead">Дорогие друзья и близкие! В этот день мы объединяем наши сердца и мечты. Ваша поддержка и присутствие делают момент ещё светлее. Спасибо, что вы с нами — рядом, на расстоянии, в мыслях и в пожеланиях. Пусть эта история любви вдохновляет и дарит радость каждому из нас.</p>
+      <p>Если вы хотите подготовить поздравление, стих или тост — будем счастливы услышать. А если просто улыбнётесь в наш адрес — это уже настоящее чудо.</p>
+    </section>
+
+    <section class="section guests">
+      <h2>Информация для гостей</h2>
+      <ul class="info-list">
+        <li>
+          <strong>Дресс-код.</strong> Мы за элегантную классику в мягких оттенках. Необязательно строго — главное, чтобы вам было комфортно.
+        </li>
+        <li>
+          <strong>Подарки.</strong> Самый ценный подарок — вы. Если хотите порадовать нас дополнительно, будем признательны за конверт.
+        </li>
+        <li>
+          <strong>Дети.</strong> Мы любим малышей, но формат вечера предполагает взрослую атмосферу. Пожалуйста, учитывайте это при планировании.
+        </li>
+        <li>
+          <strong>Фото/видео.</strong> Делитесь моментами и отмечайте нас. Лучшие кадры соберём в общий альбом после торжества.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section services">
+      <h2>Услуги и контакты</h2>
+      <div class="service-cards">
+        <article class="service-card">
+          <div class="icon">🎵</div>
+          <h3>Музыка и ведущий</h3>
+          <p>Живая музыка и DJ создадут настроение, а ведущий поможет вечеру быть лёгким и душевным.</p>
+          <small>Контакт: +7 (900) 000-00-01</small>
+        </article>
+        <article class="service-card">
+          <div class="icon">📸</div>
+          <h3>Фото и видео</h3>
+          <p>Профессиональная съёмка, чтобы сохранить наши улыбки и ваши эмоции в каждом кадре.</p>
+          <small>Контакт: @photo.sample</small>
+        </article>
+        <article class="service-card">
+          <div class="icon">🍰</div>
+          <h3>Кейтеринг</h3>
+          <p>Уютное меню с вегетарианскими опциями. Если у вас есть аллергии — сообщите нам заранее.</p>
+          <small>Контакт: +7 (900) 000-00-02</small>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>С любовью My Code - Bard Project</p>
+      <button id="shareBtn" class="btn text">Поделиться приглашением</button>
+    </footer>
+  </main>
+
+  <!-- Модалка RSVP -->
+  <dialog id="rsvpModal" class="modal">
+    <form id="rsvpForm" method="dialog" class="modal-body" novalidate>
+      <h3>Подтвердите присутствие</h3>
+
+      <label class="field">
+        <span>Ваше имя</span>
+        <input type="text" name="name" placeholder="Иван Иванов" required />
+        <small class="error" data-for="name"></small>
+      </label>
+
+      <label class="field">
+        <span>Количество гостей</span>
+        <input type="number" name="guests" min="1" max="10" value="1" required />
+        <small class="error" data-for="guests"></small>
+      </label>
+
+      <fieldset class="field">
+        <legend>Статус</legend>
+        <label class="choice"><input type="radio" name="status" value="yes" checked /> Приду</label>
+        <label class="choice"><input type="radio" name="status" value="no" /> Не смогу</label>
+      </fieldset>
+
+      <label class="field">
+        <span>Пожелания / комментарий</span>
+        <textarea name="message" rows="3" placeholder="Аллергии, пожелания к рассадке и пр."></textarea>
+      </label>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn primary">Отправить</button>
+        <button type="button" id="closeModal" class="btn outline">Закрыть</button>
+      </div>
+      <p class="privacy">Нажимая «Отправить», вы соглашаетесь на обработку введенных данных для организации мероприятия.
+
+      </p>
+    </form>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
